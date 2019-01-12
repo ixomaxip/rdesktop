@@ -791,7 +791,7 @@ rdpdr_send_clientcapability(void)
 }
 
 static void
-rdpdr_process(STREAM s, char *name)
+rdpdr_process(STREAM s)
 {
 	uint32 handle;
 	uint8 *magic;

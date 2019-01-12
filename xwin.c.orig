@@ -2687,8 +2687,6 @@ ui_select(int rdp_socket)
 		/* add ctrl slaves handles */
 		ctrl_add_fds(&n, &rfds);
 
-		addin_add_fds(&n, &rfds);
-
 		n++;
 
 		switch (select(n, &rfds, &wfds, NULL, &tv))
@@ -2714,8 +2712,6 @@ ui_select(int rdp_socket)
 		rdpdr_check_fds(&rfds, &wfds, (RD_BOOL) False);
 
 		ctrl_check_fds(&rfds, &wfds);
-
-		addin_check_fds(&rfds);
 
 		if (FD_ISSET(rdp_socket, &rfds))
 			return 1;
